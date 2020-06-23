@@ -1,0 +1,60 @@
+%\title{Example letter using the newlfm LaTeX package}
+%
+% See http://texblog.org/2013/11/11/latexs-alternative-letter-class-newlfm/
+% and http://www.ctan.org/tex-archive/macros/latex/contrib/newlfm
+% for more information.
+%
+\documentclass[12pt,stdletter,orderfromtodate,sigleft]{newlfm}
+
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+%% Patch from https://tex.stackexchange.com/a/395529/226 to address newlfm bug
+\makeatletter
+\patchcmd{\@zfancyhead}{\fancy@reset}{\f@nch@reset}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyorh}{\f@nch@orh}{}{}
+\makeatother
+
+\usepackage{blindtext, xfrac}
+ 
+\newlfmP{dateskipbefore=5pt}
+\newlfmP{sigsize=20pt}
+\newlfmP{sigskipbefore=50pt}
+ 
+\newlfmP{Headlinewd=0pt,Footlinewd=0pt}
+ 
+\namefrom{Diego Sarceño}
+%\addrfrom{%
+%    221B Baker Street\\
+%    London, UK
+%}
+ 
+%\addrto{%
+%    Basil of Baker Street\\
+%    221$\sfrac{1}{2}$ Baker Street\\
+%    London, UK
+%}
+ 
+\dateset{Guatemala, 10 de abril de 2020}
+ 
+\greetto{Comité Organizador de Phy6cool 2020}
+ 
+\closeline{Atentamente, }
+ 
+\begin{document}
+\begin{newlfm}
+    
+\justify
+Me dirijo a ustedes con el fin de mostrar mi interés por participar en la Escuela de Verano de Física de Partículas, Astropartículas y Cosmología, Phy6cool; que se llevará a cabo en Madrid, España. Soy estudiante de tercer semestre de Licenciatura en Física Aplicada y veo una gran oportunidad el participar en esta escuela para empezar a definir mi futuro a mediano y largo plazo. 
+
+\justify
+Gracias a las oportunidades que se me han presentado anteriormente, he tenido cierto contacto con investigadores en el área de altas energías y astrofísica; lo que ha alimentado mi interes en dichas áreas. Asimismo, esta experiencia sería enrriquecedora al ampliar el círculo académico, por el contacto con estudiantes extrangeros e investigadores, tanto en mi transcurso por la licenciatura, como luego de ella.
+
+\justify
+Me considero buen candidato para esta escuela, me apasiona la física, soy disciplicando y dedicado en mi proceso de aprendizaje. Este interés lo he adquirido desde mi paso por la secundaria al incorporarme en estudios para olimpiadas, tanto nacional como iberoamericana, al ingresar a la universidad y, mi participación en la Quinta Escuela Centroamericana de Física Fundamental; a día de hoy, trato de transmitir los conocimientos que he adquirido dando clases de olimpiadas, no unicamente con el fin de que triunfen en la competencia, sino que se lleguen a interesar y apacionar por la ciencia.
+
+\justify
+Sin más que añadir, expreso mi deseo de participar en la Escuela de Verano de Física de Partículas, Astropartículas y Cosmología, considero ser un buen candidato y que sería una experiencia significativa en el ámbito académico y personal. Agradezco mucho su tiempo.
+\end{newlfm}
+\end{document}
