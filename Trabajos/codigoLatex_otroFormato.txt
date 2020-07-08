@@ -1,0 +1,6 @@
+	\lstset{basicstyle=\ttfamily,breaklines=true}
+    \lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=6pt}
+    \lstset{emph={import,as,return,for,in,else,if,def}, emphstyle=\color{orange}, emph={[2]edo}, 
+	emphstyle={[2]\color{blue}}, emph={[3]float,input,int,range,print,len}, 
+	emphstyle={[3]\color{violet}}}
+    \lstset{morecomment=[l][\color{red}]{\#}, morestring=[b][\color{green!70!black}]"}
