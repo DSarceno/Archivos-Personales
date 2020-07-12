@@ -2,7 +2,7 @@
 
 \documentclass[11pt, spanish, letterpage]{article} %tipo de documento
 
-\usepackage[letterpaper]{geometry} %margenes 
+\usepackage[letterpaper]{geometry} %margenes
 \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2cm,rmargin=2cm}
 \usepackage{amsmath,amsthm,amssymb} %modos matemáticos y  simbolos
 \usepackage{latexsym,amsfonts} %simbolos matematicos
@@ -12,9 +12,9 @@
 \usepackage[utf8]{inputenc} %caracteristicas del español
 \usepackage{physics} %Simbolos fisicos
 \usepackage{array} %mejores formatos de tabla
-\parindent =0cm %sangria 
+\parindent =0cm %sangria
 \usepackage{graphicx} %graficas e imagenes
-\usepackage{mathtools} 
+\usepackage{mathtools}
 \usepackage[framemethod=TikZ]{mdframed}%Entornos talegas
 \usepackage[colorlinks = true,
 			linkcolor = blue,
@@ -39,17 +39,18 @@
 \usepackage{calligra}
 \usepackage{lipsum} % texto de relleno
 \usepackage{cite}
-\usepackage{circuitikz} % crear circuitos 
+\usepackage{circuitikz} % crear circuitos
 \usepackage{listings} % permite el ingreso de codigo
 %\usepackage{showframe}
 %\usepackage{LobsterTwo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstset{language=python}
-\lstset{frame=lines}
-\lstset{caption={Caption}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-%%	Importe de archivo: \lstinputlisting[language=python]{'nombre del archivo'.py}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=6pt}
+\lstset{emph={import,as,return,for,in,else,if,def,True,False,append}, emphstyle=\color{blue}, emph={[2]pKronecker},
+emphstyle={[2]\color{violet}}, emph={[3]float,input,int,range,print,len},
+emphstyle={[3]\color{violet}}}
+\lstset{morecomment=[l][\color{gray!40}]{\#}, morestring=[b][\color{green!50!black}]"}
+%%	Importe de archivo: \lstinputlisting[inputencoding=latin1]{'nombre del archivo'.py}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\columnseprule}{1pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,7 +76,7 @@
 \newcommand{\F}{\mathbb{F}} %Campo Cualquiera
 \newcommand{\f}{\textit{f}} %f de funcion
 \newcommand{\g}{\textit{g}}
-\newcommand{\kernel}{\mathscr{N}} %kernel 
+\newcommand{\kernel}{\mathscr{N}} %kernel
 \newcommand{\range}{\mathcal{R}} %range
 \newcommand{\lagran}{\mathcal{L}} %lagrangiano
 \newcommand{\laplace}{\mathscr{L}} %transformada de laplace, mapas lineales
@@ -94,8 +95,8 @@
 \newcommand{\QED}{\hfill {\blacksquare}}
 %----------------------------------------------------------
 %----------------------------------------------------------
-  
-  
+
+
 %-paquete para unidades en el sistema internacional
 \usepackage[load=prefix, load=abbr, load=physical]{siunitx}
 \newunit{\gram}{g }%gramos
@@ -105,7 +106,7 @@
 %--definiendo constantes fisicas en el SI
 \newcommand{\accgravity}{9.8 \metre / \Sec^2}
 %---diferencial inexacta
-\newcommand{\dbar}{\mathchar'26\mkern-12mu d} 
+\newcommand{\dbar}{\mathchar'26\mkern-12mu d}
 %-------------------------END-------------------------------------
 %------------------------Barra negra-------------------------------
 \tikzset{
