@@ -1,0 +1,14 @@
+1. En la terminal: gedit ~/.bashrc
+2. Agregá las siguientes lineas al final del doc:
+alias gs="git status"
+
+acp(){
+    git add .;
+    git commit -m "$1";
+    git push;
+}
+3. Volvé a la terminal y poné: . ~/.bashrc
+
+Y ahora para probarlo andá a un repo tuyo y pone "gs". Luego agrega un archivo de prueba al repo y colocá: acp "esto es una prueba"
+
+Ese es el comentario del commit y de una te hace todo
