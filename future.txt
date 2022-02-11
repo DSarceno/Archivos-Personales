@@ -1,3 +1,5 @@
+ACORTAR INSTRUCCIONES GIT
+
 1. En la terminal: gedit ~/.bashrc
 2. Agregá las siguientes lineas al final del doc:
 alias gs="git status"
@@ -12,3 +14,14 @@ acp(){
 Y ahora para probarlo andá a un repo tuyo y pone "gs". Luego agrega un archivo de prueba al repo y colocá: acp "esto es una prueba"
 
 Ese es el comentario del commit y de una te hace todo
+
+
+
+MODIFICAR ESTILO EN LA TERMINAL DE UBUNTU
+
+Estilo extraido de la página oficial de Oh My Bash (ahi esta toda la
+documentación), modificar el script ".bashrc" y colocar el tema deseado (en mi
+caso es "agnoster", el cual es extraído de estilos Zsh). Con esto hecho, solo
+queda configurar los simbolos especiales, para ello vamos
+a "github.com/powerline/fonts" ejecutamos el comando propuesto y reiniciamos la
+terminal. Con eso ya estaría.
