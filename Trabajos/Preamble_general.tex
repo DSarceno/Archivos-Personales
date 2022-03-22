@@ -1,5 +1,5 @@
 % AUTHOR: Diego Sarceno
-% Last Update: 22.09.2020
+% Last Update: 11.07.2020
 
 \documentclass[11pt, spanish, letterpage]{article} %tipo de documento
 
@@ -8,7 +8,7 @@
 \usepackage{amsmath,amsthm,amssymb} %modos matemáticos y  simbolos
 \usepackage{latexsym,amsfonts} %simbolos matematicos
 \usepackage{cancel} %hacer la linea que cancela las ecuaciones
-\usepackage[spanish, es-noshorthands, es-nolayout]{babel} %comandos en español y cambia el cuadro por la tabla
+\usepackage[spanish, es-noshorthands]{babel} %comandos en español y cambia el cuadro por la tabla
 \decimalpoint %cambia las comas por puntos decimal
 \usepackage[utf8]{inputenc} %caracteristicas del español
 \usepackage{physics} %Simbolos fisicos
@@ -42,7 +42,6 @@
 \usepackage{cite}
 \usepackage{circuitikz} % crear circuitos
 \usepackage{listings} % permite el ingreso de codigo
-\usepackage{longtable} % tablas a travez de paginas
 %\usepackage{showframe}
 %\usepackage{LobsterTwo}
 % NEW PACKAGES
@@ -58,8 +57,13 @@
 \usepackage[draft,inline,nomargin]{fixme} \fxsetup{theme=color}
 
 %This defines my comments
-\definecolor{mycolor}{RGB}{250,0,0}
+\definecolor{mycolor}{RGB}{0,0,250}
 \FXRegisterAuthor{ds}{sds}{\color{mycolor}DS}
+
+
+\usepackage{pdfpages}
+\setlength{\parindent}{1cm} %sangria
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \lstset{basicstyle=\ttfamily,breaklines=true}
 \lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=6pt}
@@ -69,20 +73,7 @@ emphstyle={[3]\color{violet}}}
 \lstset{morecomment=[l][\color{gray!40}]{\#}, morestring=[b][\color{green!50!black}]"}
 %%	Importe de archivo: \lstinputlisting[inputencoding=latin1]{'nombre del archivo'.py}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\columnseprule}{1pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{fancyhdr}%formato de pagina
-\pagestyle{fancy}%colocar la pagina con el formato deseado
-\fancyhead{}
-\fancyhead[L]{\footnotesize{Física 3}}
-\fancyhead[C]{Hoja de Trabajo 12}
-\fancyhead[R]{\footnotesize{\thepage}}
-%\fancyhead[LO,RE]{Cálculo 3}
-%\fancyhead[RO,LE]{\footnotesize{\thepage}}
-\fancyfoot{}
-\fancyfoot[L]{Diego Sarceño}
-%\fancyfoot[LO,RE]{Diego Sarceño}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\columnseprule}{0pt}
 %-------------------------------------------------
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -92,26 +83,30 @@ emphstyle={[3]\color{violet}}}
 \newcommand{\C}{\mathbb{C}} %Conjuntos numericos
 \newcommand{\F}{\mathbb{F}} %Campo Cualquiera
 \newcommand{\Pos}{\mathbb{P}} %Reales positivos
+\newcommand{\Hilbert}{\mathcal{H}} % Espacio de Hilbert
 \newcommand{\f}{\textit{f}} %f de funcion
 \newcommand{\g}{\textit{g}}
 \newcommand{\kernel}{\mathscr{N}} %kernel
 \newcommand{\range}{\mathcal{R}} %range
 \newcommand{\lagran}{\mathcal{L}} %lagrangiano
 \newcommand{\laplace}{\mathscr{L}} %transformada de laplace, mapas lineales
+\newcommand{\partition}{\mathfrak{z}} % función de partición
 \newcommand{\M}{\mathcal{M}} %Matrices
 \newcolumntype{E}{>{$}c<{$}} %entorno matematico en columnas de una tabla
 \newcommand{\vi}{\boldsymbol{\hat{\imath}}}
 \newcommand{\vj}{\boldsymbol{\hat{\jmath}}}
 \newcommand{\vk}{\vu{k}}%vectores unitarios R3
 \newcommand{\vr}{\hat{r}}
-\newcommand{\vp}{\boldsymbol{\hat{\theta}}}
+\newcommand{\vp}{\boldsymbol{\hat{\phi}}}
 \newcommand{\vz}{\vu{z}}%vectores unitarios en cilindricas
-\newcommand{\vaz}{\boldsymbol{\hat{\phi}}}%vectores unitarios en esféricas
+\newcommand{\vaz}{\boldsymbol{\hat{\theta}}}%vectores unitarios en esféricas
+\newcommand{\vx}{\vu{x}}%vectores
+\newcommand{\vy}{\vu{y}}%vectores 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 \newcommand{\LI}{\lim _{h\longrightarrow 0}}
 \newcommand{\SU}{\longrightarrow \sum _{n=0} ^{\infty}}
-\newcommand{\QED}{\hfill {\blacksquare}}
-\renewcommand{\thefootnote}{\fnsymbol{footnote}} %para mmodificar notas al margen
+\newcommand{\QED}{\hfill {\qed}}
+\newcommand{\cis}{\text{cis} \,}
 %----------------------------------------------------------
 %----------------------------------------------------------
 
@@ -146,13 +141,13 @@ emphstyle={[3]\color{violet}}}
 	linecolor=black,%
 	fontcolor=black,%
 	firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-										node[warningsymbol] {$\ddagger$};},%
+										node[warningsymbol] {$\mathcal{S}$};},%
 	secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-										node[warningsymbol] {$\ddagger$};},%
+										node[warningsymbol] {$\mathcal{S}$};},%
 	middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-										node[warningsymbol] {$\ddagger$};},%
+										node[warningsymbol] {$\mathcal{S}$};},%
 	singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-										node[warningsymbol] {$\ddagger$};},%
+										node[warningsymbol] {$\mathcal{S}$};},%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tema - BEGIN
 \newtheoremstyle{Tema}% name of the style to be used
@@ -167,12 +162,13 @@ emphstyle={[3]\color{violet}}}
 
 \theoremstyle{Tema} \newtheorem{Tema}{Tema} %%%%% Template para Temas
 \theoremstyle{Tema} \newtheorem{serie}{Serie}              %%%%%  Template para Series de ejercicios
+\theoremstyle{Tema} \newtheorem{teorema}{Teorema}              %%%%%  Template para Teoremas
 \theoremstyle{Tema} \newtheorem{pregunta}{Pregunta}              %%%%%  Template para Series de ejercicios
 \theoremstyle{Tema} \newtheorem{ejercicio}{Ejercicio}    %%%%%  Template para Ejercicios
+\theoremstyle{Tema} \newtheorem{ejemplo}{Ejemplo}    %%%%%  Template para Ejemplos
 \theoremstyle{Tema} \newtheorem{solucion}{Solución}    %%%%%  Template para Soluciones
+\theoremstyle{Tema} \newtheorem{problem}{Problema}    %%%%%  Template para Problema
+\theoremstyle{Tema} \newtheorem{definicion}{Definición}    %%%%%  Template para Soluciones
+\theoremstyle{Tema} \newtheorem{proposicion}{Proposición}    %%%%%  Template para Soluciones
+\theoremstyle{Tema} \newtheorem{lema}{Lema}    %%%%%  Template para Soluciones
 %-------------------------END-------------------------------------
-%			Useful commands
-
-%	hyperlinks anclados a frases
-% \href{referencia}{palabra_asociada}
-% \dsnote{Texto para la nota, esta aparecerá en rojo antecedida por las siglas 'DS'}
