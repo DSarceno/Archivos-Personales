@@ -36,6 +36,9 @@ gnuplot="#	$fecha \n#	$name.gp \n#	Diego Sarceno (dsarceno68@gmail.com) \n\n#	Re
 # R
 r="#	$fecha \n#	$name.R \n#	Diego Sarceno (dsarceno68@gmail.com) \n\n#	Resumen \n\n#	Codificado del texto: UTF8 \n#	Compiladores probados: R (Ubuntu 20.04 Linux) 4.0.3 \n#	Instruciones de Ejecución: no requiere nada mas \n#	Rscript $name.R \n\n\n "
 
+# root
+crt="// $fecha \n// $name.C \n// Diego Sarceno (dsarceno68@gmail.com) \n\n// Resumen \n\n// Codificado del texto: UTF8 \n// Compiladores probados: root (Ubuntu 20.04 Linux) 6.28/00 w c++ 9.4.0 \n// Instruciones de Ejecución: no requiere nada mas \n// root -q $name.C \n\n"
+
 
 
 
@@ -48,6 +51,7 @@ echo "3. C"
 echo "4. C++"
 echo "5. Gnuplot"
 echo "6. R"
+echo "7. Root (.C)"
 read choice
 if [ -z $choice ]; then
   echo "No ingreso un numero valido"
@@ -100,4 +104,13 @@ elif (($choice == 6)); then
       exit 2
   fi
   echo -e $r >> $fname
+# 7
+elif (($choice == 7)); then
+  fname=$name".C"
+  if [ -e $fname ]; then
+      echo "El archivo ya existe"
+      exit 2
+  fi
+  echo -e $crt >> $fname
+
 fi
