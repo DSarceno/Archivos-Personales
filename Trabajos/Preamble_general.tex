@@ -42,6 +42,7 @@
 \usepackage{cite}
 \usepackage{circuitikz} % crear circuitos
 \usepackage{listings} % permite el ingreso de codigo
+\usepackage{longtable}
 %\usepackage{showframe}
 %\usepackage{LobsterTwo}
 % NEW PACKAGES
@@ -67,8 +68,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \lstset{basicstyle=\ttfamily,breaklines=true}
 \lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=6pt}
-\lstset{emph={import,as,return,for,in,else,if,def,True,False,append}, emphstyle=\color{blue}, emph={[2]pKronecker},
-emphstyle={[2]\color{violet}}, emph={[3]float,input,int,range,print,len},
+\lstset{emph={import,as,return,for,in,else,if,def,True,const,False,append}, emphstyle=\color{blue}, emph={[2]pKronecker},
+emphstyle={[2]\color{violet}}, emph={[3]float,input,int,range,print,len,double},
 emphstyle={[3]\color{violet}}}
 \lstset{morecomment=[l][\color{gray!40}]{\#}, morestring=[b][\color{green!50!black}]"}
 %%	Importe de archivo: \lstinputlisting[inputencoding=latin1]{'nombre del archivo'.py}
@@ -107,6 +108,8 @@ emphstyle={[3]\color{violet}}}
 \newcommand{\SU}{\longrightarrow \sum _{n=0} ^{\infty}}
 \newcommand{\QED}{\hfill {\qed}}
 \newcommand{\cis}{\text{cis} \,}
+% matrices de pauli
+\newcommand{\pauli}[1]{\sigma _{#1}}
 %----------------------------------------------------------
 %----------------------------------------------------------
 
@@ -171,4 +174,5 @@ emphstyle={[3]\color{violet}}}
 \theoremstyle{Tema} \newtheorem{definicion}{Definición}    %%%%%  Template para Soluciones
 \theoremstyle{Tema} \newtheorem{proposicion}{Proposición}    %%%%%  Template para Soluciones
 \theoremstyle{Tema} \newtheorem{lema}{Lema}    %%%%%  Template para Soluciones
+\theoremstyle{Tema} \newtheorem{reto}{Reto}    %%%%%  Template para Reto
 %-------------------------END-------------------------------------
